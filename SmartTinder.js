@@ -96,13 +96,6 @@ function trickTinder() {
 	}
 }
 
-
-// There is a lot more fun that can be achieved
-// Need to add socket puppetry (VPNs solutions? several accounts?) - :D
-// TODO: Need to accept automatically permissions except for
-// TODO: Need to add ANN for fake pics
-// TODO: Need to add RNN for fake messages
-
 function getRandomPeriod() {
 	return Math.round(Math.random() * (2000 - 500)) + 500;
 }
