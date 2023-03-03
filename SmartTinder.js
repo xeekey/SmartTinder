@@ -1,3 +1,4 @@
+likes = 0;
 function hasBlacklistKeywords(bio) {
 	const blacklist = [
 		'ladyboy',
@@ -12,7 +13,8 @@ function hasBlacklistKeywords(bio) {
 		'shemale',
 		'chubby',
 		'barn',
-		'børn'
+		'børn',
+        'gravid'
 	];
 
 	for (item of blacklist) {
@@ -63,7 +65,6 @@ function trickTinder() {
 	// Open profile bio
 	const info = document.getElementsByClassName(infoClassName)[0];
 	if (info) {
-		console.log("info click");
 		info.click();
 	}
 	pause(600);
@@ -71,7 +72,8 @@ function trickTinder() {
 	// Like or deslike depending on validation
 	if (hasValidProfile()) {
 		like.click();
-		console.log("like clicked");
+        likes = likes + 1;
+        console.log('You have now liked ' + likes + ' girls');
 		const thereIsMatch = isMatch();
 		if (thereIsMatch) {
 			console.log('------------- IT\'S A MATCH ! -------------');
@@ -95,6 +97,13 @@ function trickTinder() {
 		return seconds * 1000;
 	}
 }
+
+
+// There is a lot more fun that can be achieved
+// Need to add socket puppetry (VPNs solutions? several accounts?) - :D
+// TODO: Need to accept automatically permissions except for
+// TODO: Need to add ANN for fake pics
+// TODO: Need to add RNN for fake messages
 
 function getRandomPeriod() {
 	return Math.round(Math.random() * (2000 - 500)) + 500;
